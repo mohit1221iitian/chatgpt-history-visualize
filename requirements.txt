@@ -1,0 +1,5 @@
+langchain-huggingface
+scikit-learn
+dotenv
+sentence-transformers
+pyvis
