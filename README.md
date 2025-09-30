@@ -2,198 +2,179 @@
 
 <div align="center">
 
-**See your ChatGPT conversations as a connected network graph**
+**Visualize your ChatGPT conversations as an interactive network graph using AI embeddings**
 
 [![Stars](https://img.shields.io/github/stars/mohit1221iitian/chatgpt-history-visualizer?style=for-the-badge&logo=github&color=yellow)](https://github.com/mohit1221iitian/chatgpt-history-visualizer/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
-[![Made with Love](https://img.shields.io/badge/Made%20with-❤️%20%26%20☕-red?style=for-the-badge)](https://github.com/mohit1221iitian)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python)](https://www.python.org)
 
-[🚀 Quick Start](#-lightning-fast-setup) • [✨ Features](#-what-you-get) • [🎨 Gallery](#-visual-feast) • [🤝 Contribute](#-join-the-revolution)
+[🚀 Quick Start](#-quick-start) • [✨ Features](#-features) • [🎨 Gallery](#-see-it-in-action) • [🤝 Contribute](#-contributing)
 
 </div>
 
 ---
 
-## 🎯 Turn Your Chat History Into Art
+## 🎯 What This Does
 
-Ever wondered what your ChatGPT conversations would look like as a network? Each chat is a node, connections show relationships, and together they form a beautiful web of your AI interactions.
+Ever wondered how your ChatGPT conversations relate to each other? This tool uses **AI embeddings** to find semantic similarities between your chats and visualizes them as a beautiful, interactive network graph.
 
-**Simple. Visual. Beautiful.**
-
----
-
-## ✨ What You Get
-
-- **🕸️ Network Graph** – See all your conversations as connected nodes
-- **⚡ Zero Setup** – Just one HTML file, no installation needed
-- **🔒 100% Private** – Everything runs in your browser, data never leaves your machine
-- **🎨 Clean Design** – Dark theme with glowing nodes and smooth animations
-- **📊 Interactive** – Pan, zoom, and explore your conversation network
+- Each **node** = one conversation
+- Each **connection** = semantic similarity between conversations
+- **Closer nodes** = more similar topics/content
 
 ---
 
-## 🎨 Visual Feast
+## ✨ Features
+
+- 🤖 **AI-Powered Analysis** – Uses HuggingFace embeddings to understand conversation meaning
+- 🕸️ **Network Visualization** – See how your conversations connect based on content similarity
+- ⚡ **Interactive Graph** – Pan, zoom, drag nodes, and explore with physics controls
+- 🎨 **Beautiful Dark Theme** – Sleek design with glowing nodes and smooth animations
+- 🔒 **100% Local** – All processing happens on your machine, data stays private
+- 📊 **Customizable Threshold** – Adjust similarity threshold to control connection density
+
+---
+
+## 🎨 See It In Action
 
 <div align="center">
 
-### **📊 From This...**
-```json
-{"conversations": [{"id": "chat_1", ...}, {"id": "chat_2", ...}]}
-```
-
-### **↓ To This ↓**
-
 ![Network Graph View 1](./screenshots/graph1.png)
-*Your conversations as a connected network - each node is a chat*
+*Your conversations mapped by semantic similarity*
 
 ![Network Graph View 2](./screenshots/graph2.png)
-*See the web of connections between your ChatGPT interactions*
+*Interactive network showing how topics connect*
 
 </div>
 
 ---
 
-## 🚀 Lightning-Fast Setup
+## 🚀 Quick Start
 
-### Three steps. One minute. Done.
+### Prerequisites
+
+- Python 3.8 or higher
+- Your ChatGPT `conversations.json` file (export from ChatGPT settings)
+
+### Installation
 
 ```bash
-# 1️⃣ Clone the repo
+# 1️⃣ Clone the repository
 git clone https://github.com/mohit1221iitian/chatgpt-history-visualizer.git
-
-# 2️⃣ Navigate to folder
 cd chatgpt-history-visualizer
 
-# 3️⃣ Add your conversations.json file and open chat_history_graph.html in your browser
+# 2️⃣ Install dependencies
+pip install -r requirements.txt
+
+# 3️⃣ Add your conversations.json file to the project folder
+
+# 4️⃣ Run the script
+python chat_history_visualizer.py
+
+# 5️⃣ Open the generated chat_history_graph.html in your browser
 ```
 
-**That's literally it.** No dependencies, no build process, no configuration. Just open and explore.
+### Requirements
 
----
-
-## 🎪 What People Are Saying
-
-> *"I didn't know my chat history could look this good. It's like turning data into poetry."*  
-> — **@DataNerd2024**
-
-> *"Finally, a tool that makes sense of my AI addiction. The visualizations are chef's kiss."*  
-> — **@TechEnthusiast**
-
-> *"This should be illegal. How is this free?"*  
-> — **@OpenSourceFanatic**
-
----
-
-## 🎯 Perfect For
-
-- 📚 **Visualizing Patterns** – See how your conversations connect
-- 🎨 **Data Lovers** – Beautiful way to explore your chat history
-- 🔍 **Curious Minds** – Understand your ChatGPT usage at a glance
-- 💻 **Developers** – Simple, clean code you can customize
+Create a `requirements.txt` file with:
+```txt
+langchain-huggingface
+sentence-transformers
+scikit-learn
+networkx
+pyvis
+python-dotenv
+```
 
 ---
 
 ## 🛠️ How It Works
 
 ```
-Your conversations.json
+1. Load conversations.json
          ↓
-   HTML + JavaScript
+2. Extract user-assistant pairs
          ↓
-   Network Graph 🕸️
+3. Generate embeddings (HuggingFace)
          ↓
-   Beautiful Visualization ✨
+4. Calculate similarity matrix
+         ↓
+5. Create network graph (NetworkX)
+         ↓
+6. Visualize with PyVis
+         ↓
+7. Interactive HTML graph! 🎉
 ```
 
-**Technology:**
-- Pure HTML/CSS/JS
-- D3.js or similar for network visualization
-- No backend, no servers, no complexity
+### Technical Details
+
+- **Embeddings**: Uses `sentence-transformers/all-MiniLM-L6-v2` for fast, quality embeddings
+- **Similarity**: Cosine similarity to measure conversation relationships
+- **Threshold**: Default 0.6 (connections shown for >60% similarity)
+- **Visualization**: PyVis creates interactive network with physics simulation
+- **Graph Library**: NetworkX for graph data structure
 
 ---
 
-## 💎 What Makes It Special
+## ⚙️ Customization
 
-✨ **Single File** – One HTML file does everything  
-🎨 **Dark Theme** – Easy on the eyes, looks professional  
-🔒 **Private** – All processing happens locally in your browser  
-⚡ **Fast** – Loads instantly, renders smoothly  
-🎯 **Simple** – No complicated features, just visualization
+### Adjust Similarity Threshold
 
----
+In `chat_history_visualizer.py`, change the threshold value:
 
-## ⚠️ Important Notes
-
-🛡️ **Privacy:**
-- Keep your `conversations.json` file private
-- Never commit sensitive data to GitHub
-- All processing is client-side only
-
-📜 **Usage:**
-- For personal visualization only
-- Respect OpenAI's terms of service
-- Don't share other people's chat data
-
----
-
-## 🚀 Roadmap
-
-- [ ] 🎨 Color themes
-- [ ] 🔍 Search and filter nodes
-- [ ] 💾 Export graph as image
-- [ ] 📱 Mobile responsive design
-- [ ] ✨ Your idea? Open an issue!
-
----
-
-## 🤝 Contributing
-
-Found a bug or have an idea? Contributions welcome!
-
-```bash
-# Fork it 🍴
-# Make it better ✨
-# Send a PR 🚀
+```python
+threshold = 0.6  # Lower = more connections, Higher = fewer connections
 ```
 
-**Ways to help:**
-- 🐛 Report bugs
-- 💡 Suggest features
-- 📝 Improve documentation
-- 🎨 Enhance the visualization
-- ⭐ Star the repo
+- **0.5-0.6**: More connections, denser graph
+- **0.7-0.8**: Fewer connections, clearer clusters
+- **0.9+**: Only very similar conversations connected
+
+### Change Embedding Model
+
+Swap for a different model:
+
+```python
+embedding_llm = HuggingFaceEmbeddings(
+    model_name="BAAI/bge-large-en-v1.5"  # More powerful but slower
+    # model_name="sentence-transformers/all-MiniLM-L6-v2"  # Default: fast and good
+)
+```
+
+### Customize Graph Appearance
+
+Modify PyVis settings:
+
+```python
+net = Network(
+    height="1000px", 
+    width="100%", 
+    bgcolor="#0d0d0d",  # Background color
+    font_color="white"   # Text color
+)
+```
 
 ---
 
-## 📜 License
+## 🎯 Use Cases
 
-MIT License - Because sharing is caring 💙
-
-Free to use, modify, and distribute. Just don't claim you invented it. (You didn't. But you can definitely make it better.)
-
----
-
-## 🌟 Show Some Love
-
-If this tool saved you time, sparked joy, or blew your mind:
-
-⭐ **Star this repo** – It costs $0 but means everything  
-🐦 **Share on Twitter** – Spread the magic  
-☕ **Buy me a coffee** – Fuel future awesomeness  
-💬 **Tell a friend** – Good vibes are meant to be shared
+- 📚 **Research** – Find related discussions across your chat history
+- 🔍 **Discovery** – Uncover unexpected connections between topics
+- 🧠 **Analysis** – Understand your conversation patterns and interests
+- 🎨 **Visualization** – Create beautiful maps of your AI interactions
+- 📊 **Exploration** – Navigate your chat history visually instead of scrolling
 
 ---
 
-<div align="center">
+## 💡 Understanding Your Graph
 
-### 🚀 **Ready to See Your Story?**
+### What the visualization shows:
 
-**[Get Started Now](https://github.com/mohit1221iitian/chatgpt-history-visualize)** • Made with ❤️ and ☕ by [@mohit1221iitian](https://github.com/mohit1221iitian)
+- **Clusters** = groups of related conversations
+- **Bridges** = conversations connecting different topics
+- **Isolated nodes** = unique conversations with no strong similarities
+- **Dense areas** = topics you discuss frequently
 
----
+### Tips:
 
-*"Data is just numbers until you visualize it. Then it becomes magic."*
-
-⭐ **Don't forget to star this repo!** ⭐
-
-</div>
+- Use the physics
