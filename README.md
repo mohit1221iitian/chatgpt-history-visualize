@@ -4,7 +4,7 @@
 
 **Visualize your ChatGPT conversations as an interactive network graph using AI embeddings**
 
-[![Stars](https://img.shields.io/github/stars/mohit1221iitian/chatgpt-history-visualizer?style=for-the-badge&logo=github&color=yellow)](https://github.com/mohit1221iitian/chatgpt-history-visualizer/stargazers)
+[![Stars](https://img.shields.io/github/stars/mohit1221iitian/chatgpt-history-visualize?style=for-the-badge&logo=github&color=yellow)](https://github.com/mohit1221iitian/chatgpt-history-visualizer/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python)](https://www.python.org)
 
